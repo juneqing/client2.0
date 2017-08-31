@@ -1,0 +1,32 @@
+.bgac {
+    height: 100vh;
+}
+
+.tixianye {
+    margin-top: 0.6rem;
+}
+
+.tixianye-box p {
+    font-size: 1.2rem;
+    color: #FE0000;
+}
+
+.tixianye-box a {
+    width: 4.2rem;
+    height: 1.5rem;
+    background: #FE0000;
+    color: #fff;
+    text-align: center;
+    line-height: 1.5rem;
+    border-radius: 15px;
+    float: right;
+    margin-top: 0.5rem;
+}
+
+.redColor {
+    color: #FE0000;
+}
+
+.orangeCol {
+    color: #FF994E;
+}

@@ -1,0 +1,16 @@
+<div class="animated fadeInRight bgac" *ngIf="step==''">
+    <div class="beginner">
+        <a routerLink="/share/guide"><img src="/assets/images/beginner1.png" alt="新手指南"></a>
+    </div>
+    <div class="beginner">
+        <a href="http://yuntv.letv.com/bcloud.html?uu=7ddc155d09&vu=b3c0457f85&auto_play=1&from=singlemessage"><img src="../../../assets/images/beginner2.png" alt="视频讲解"></a>
+    </div>
+    <div class="beginner">
+        <a (click)="step='imgText'"><img src="/assets/images/beginner3.png" alt="图文讲解"></a>
+    </div>
+</div>
+<div class="animated fadeInRight bgac  bgaImg" *ngIf="step=='imgText'">
+    <div class="beginner imgText">
+        <img src="/assets/images/imgText.jpg" alt="图文讲解长图">
+    </div>
+</div>

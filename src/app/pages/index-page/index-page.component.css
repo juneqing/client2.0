@@ -1,0 +1,30 @@
+img {
+    max-height: 10.0333rem;
+}
+
+.active {
+    color: #FFBA00!important;
+    border-bottom: 2px solid #FFBA00!important;
+}
+
+.toggle {
+    vertical-align: middle;
+}
+
+.toggleNav {
+    display: none;
+    background: #037CE7;
+}
+
+.category {
+    float: left;
+    display: block;
+    height: 1.1111rem;
+    width: 30%;
+    background: #B0CDEF;
+    border-radius: 20px;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 0.6667rem;
+    color: #fff;
+}

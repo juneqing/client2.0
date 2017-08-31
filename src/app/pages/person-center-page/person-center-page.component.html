@@ -1,0 +1,113 @@
+<div class="animated fadeInRight bgac">
+    <div class="icon">
+        <div class="icon-box">
+            <div class="iconImg">
+                <div class="iconImgs">
+                    <img src="{{user.headimgurl}}" alt="">
+                </div>
+            </div>
+            <div class="id">编号:<span>{{user._id.substring(0,6)}}</span></div>
+            <p class="name">
+                <span>{{user.nickname}}</span>
+                <span [ngSwitch]="user.sex" class="sex">
+                    <p *ngSwitchCase="1">
+                            <img src="/assets/man.png" alt="性别男">
+                    </p>
+                    <p *ngSwitchCase="2">
+                            <img src="/assets/woman.png" alt="性别女">
+                    </p>
+                    <p *ngSwitchDefault>
+                            <img src="/assets/sex.png" alt="性别">
+                    </p>
+                </span>
+            </p>
+            <a routerLink="/share/full-info"><i class="iconfont">&#xe689;</i></a>
+        </div>
+    </div>
+    <div class="centerB clear">
+        <div class="centerBox">
+            <span class="fl">账户余额  ￥{{user.totalMoney | money}}</span>
+            <a routerLink="/share/money-log">
+                <span class="fr moneyBtn">
+                    收入明细
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="bill">
+        <div class="bill-box">
+            <i class="iconfont">&#xe608;</i>
+            <p>今日收益</p>
+            <span>￥{{user.todayMoney | money}}</span>
+        </div>
+        <div class="bill-box">
+            <i class="iconfont">&#xe621;</i>
+            <p>今日收徒</p>
+            <span>{{user.todayStudent}}人</span>
+        </div>
+        <div class="bill-box">
+            <i class="iconfont">&#xe65d;</i>
+            <p>累计收徒</p>
+            <span>{{user.totalStudent}}人</span>
+        </div>
+    </div>
+    <div class="operation">
+        <div class="operation-box">
+            <a routerLink="/share/beginner">
+                <p class="p1"><i class="iconfont">&#xe685;</i></p>
+                <span>新手学堂</span>
+            </a>
+        </div>
+        <div class="operation-box">
+            <a routerLink="/share/myMoney">
+                <p class="p2"><i class="iconfont">&#xe8d3;</i></p>
+                <span>我的钱包</span>
+            </a>
+        </div>
+        <div class="operation-box">
+            <a routerLink="/share/fans-money">
+                <p class="p3"><i class="iconfont">&#xe65a;</i></p>
+                <span>粉丝收益</span>
+            </a>
+        </div>
+        <div class="operation-box">
+            <a routerLink="/share/get-money-record">
+                <p class="p4"><i class="iconfont">&#xe6c5;</i></p>
+                <span>提现记录</span>
+            </a>
+        </div>
+        <div class="operation-box">
+            <a routerLink="/share/recruit-student">
+                <p class="p5"><i class="iconfont">&#xe61a;</i></p>
+                <span>收徒赚钱</span>
+            </a>
+        </div>
+
+
+
+
+        <div class="operation-box">
+            <a routerLink="/share/fans-money">
+                <p class="p6"><i class="iconfont">&#xe66d;</i></p>
+                <span>联系客服</span>
+            </a>
+        </div>
+        <div class="operation-box">
+            <a>
+                <p class="p7"><i class="iconfont">&#xe64c;</i></p>
+                <span>用户设置</span>
+            </a>
+        </div>
+        <div class="operation-box">
+            <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=d7fd2d3aa355288e9b3dcf4efd3988c338f32c2c8993e065ebae8e1f033ad581">
+                <p class="p8"><i class="iconfont">&#xe616;</i></p>
+                <span>一键加群</span>
+            </a>
+        </div>
+    </div>
+    <a routerLink="/share/full-info" *ngIf="!user.isFinish">
+        <div class="tishi">
+            温馨提示:完善个人信息后才能提现哟！~
+        </div>
+    </a>
+</div>

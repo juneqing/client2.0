@@ -1,0 +1,53 @@
+<nav class="nav" style="width: 100vw;">
+    <a routerLink="/share/index" (click)="selectedTaskTag=null; getTasks()" [class.active]="!selectedTaskTag"> 全部</a>
+    <a routerLink="/share/index" (click)="selectedTaskTag=null; getTasks()" [class.active]="!selectedTaskTag"> 推荐</a>
+    <a routerLink="/share/index" (click)="selectedTaskTag=null; getTasks()" [class.active]="!selectedTaskTag"> 金融</a>
+    <a routerLink="/share/index" (click)="selectedTaskTag=null; getTasks()" [class.active]="!selectedTaskTag"> 加盟</a>
+    <a routerLink="/share/index" (click)="selectedTaskTag=null; getTasks()" [class.active]="!selectedTaskTag"> 美妆</a>
+    <!-- <a routerLink="/share/index" [class.active]="selectedTaskTag==taskTag._id " *ngFor="let taskTag of taskTags" (click)="getTasks(taskTag._id)">{{taskTag.name}}</a> -->
+    <a routerLink="/share/index"><img src="../../../assets/toggle.png" alt="下拉菜单" class="toggle"></a>
+    <div class="toggleNav">
+        <button routerLink="/share/index" [class.active]="selectedTaskTag==taskTag._id " *ngFor="let taskTag of taskTags" (click)="getTasks(taskTag._id)">{{taskTag.name}}</button>
+    </div>
+</nav>
+
+
+<div class="swiper-container">
+    <!-- 轮播 -->
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="width:100vw;">
+            <a routerLink="/share/taskDetail" [queryParams]="{openid:user.openid,taskId:banner.task._id}" *ngFor="let banner of banners;let i = index;">
+                <img [src]=" banner.task.bannerImg" alt="" class="fadeInRight" *ngIf="showingBanner==i">
+            </a>
+        </div>
+    </div>
+    <div class="swiper-pagination" *ngFor="let banner of banners;let i = index;"></div>
+</div>
+<div class="animated fadeInRight">
+    <div class="center">
+        <a class="center-box" routerLink='/share/taskDetail' [queryParams]="{parent:user._id,taskId:task._id}" *ngFor="let task of tasks">
+            <div class="center-box-cr">
+                <img [src]="task.imageUrl" alt="">
+                <div class="content">
+                    <p>{{task.title.length >15 ? task.title.substring(0,15)+'...':task.title }}</p>
+                    <span class="category">金融</span>
+                    <span class="time">{{task.createDt | date:'yyyy-MM-dd'}}</span>
+                    <span class="click"><i class="iconfont">&#xe67c;</i>{{task.clickNum}}</span>
+                </div>
+                <span class="cost">
+                     分享赚
+                    <br>
+                    ￥{{task.shareMoney}}元</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+
+<!-- <div style="position: fixed;/* overflow-y: hidden; *//* top: 20%; */
+/* left: 25%; */
+/* top: 0; */left: 0;width: 100vw;height: 10000vh;
+background: gray;opacity: 0.6;z-index: 9999;bottom: 0;">
+    <img alt="" src="/assets/loading2.gif" style="position: fixed;top: 44vh;left: 25%;/* margin-left: 25%; */margin-top: 40%;">
+</div> -->

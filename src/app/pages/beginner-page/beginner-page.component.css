@@ -1,0 +1,26 @@
+.bgac {
+    background: #EBEBEB;
+    height: 100vh;
+}
+
+.bgaImg {
+    height: 100%;
+}
+
+.beginner {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.beginner img {
+    width: 100%;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.beginner:first-child img {
+    margin-top: 2.5rem;
+}
+
+.imgText img {
+    margin-bottom: 3rem;
+}
