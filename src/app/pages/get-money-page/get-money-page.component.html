@@ -6,8 +6,21 @@
                     <img src="{{user.headimgurl}}" alt="">
                 </div>
             </div>
-            <p class="name">{{user.nickname}}</p>
-            <div class="id">编号:<span>{{user._id.toString().substring(0,6)}}</span></div>
+            <div class="id">编号:<span>{{user._id.substring(0,6)}}</span></div>
+            <p class="name">
+                <span>{{user.nickname}}</span>
+                <span [ngSwitch]="user.sex" class="sex">
+                    <p *ngSwitchCase="1">
+                            <img src="/assets/man.png" alt="性别男">
+                    </p>
+                    <p *ngSwitchCase="2">
+                            <img src="/assets/woman.png" alt="性别女">
+                    </p>
+                    <p *ngSwitchDefault>
+                            <img src="/assets/sex.png" alt="性别">
+                    </p>
+                </span>
+            </p>
         </div>
     </div>
     <div class="zuobi">
@@ -23,11 +36,11 @@
         <b>￥{{user.totalMoney | money}}</b>
         <span style="font-size:12px;"> <b *ngIf="msg">{{msg}}</b></span>
     </div>
-    <div>
+    <div style="background:#fff;">
         <div class="tixianfangshi1">
             <div class="tixian-form">
                 <label for="">提现金额:</label>
-                <input type="number" (change)="money =moneyInput.value" #moneyInput placeholder="只要你有，都可提现(●'◡'●)" min="0" max="999" step="0.001">
+                <input type="number" (change)="money=moneyInput.value" #moneyInput placeholder="满1元就可提现,即时到帐(●'◡'●)" min="0" max="999" step="0.001">
             </div>
         </div>
         <div class="tixianfangshi2" (click)="getMoneyRequest()">

@@ -32,6 +32,8 @@ export class GetMoneyPageComponent implements OnInit {
     let result = await this.config.Post('/share.getMoney.go', { userId: this.user._id, money: this.money });
     this.user = await await this.config.syncUser();
     this.msg = result.msg;
+    this.money=<any>'';
+    alert('提现成功');
   }
 
 

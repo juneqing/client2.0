@@ -586,12 +586,8 @@ body {
     color: #333333;
 }
 
-.centerBox>span:first-child {
+.borRight {
     border-right: 1px solid #ebebeb;
-}
-
-.centerBox .fl span {
-    color: #FE2828;
 }
 
 .redColor {

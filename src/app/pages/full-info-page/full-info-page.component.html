@@ -6,8 +6,21 @@
                     <img src="{{user.headimgurl}}" alt="">
                 </div>
             </div>
-            <p class="name">{{user.nickname}}</p>
             <div class="id">编号:<span>{{user._id.substring(0,6)}}</span></div>
+            <p class="name">
+                <span>{{user.nickname}}</span>
+                <span [ngSwitch]="user.sex" class="sex">
+                    <p *ngSwitchCase="1">
+                            <img src="/assets/man.png" alt="性别男">
+                    </p>
+                    <p *ngSwitchCase="2">
+                            <img src="/assets/woman.png" alt="性别女">
+                    </p>
+                    <p *ngSwitchDefault>
+                            <img src="/assets/sex.png" alt="性别">
+                    </p>
+                </span>
+            </p>
         </div>
     </div>
     <div class="bill">
@@ -17,12 +30,7 @@
             <span>￥{{user.todayMoney | money}}</span>
         </div>
         <div class="bill-box">
-            <i class="iconfont">&#xe65b;</i>
-            <p>账户余额</p>
-            <span>￥{{user.totalMoney | money}}</span>
-        </div>
-        <div class="bill-box">
-            <i class="iconfont">&#xe620;</i>
+            <i class="iconfont">&#xe621;</i>
             <p>今日收徒</p>
             <span>{{user.todayStudent}}人</span>
         </div>
@@ -35,15 +43,15 @@
     <div class="form">
         <div>
             <div class="form-box">
-                <i class="iconfont">&#xe61c;</i>
+                <i class="iconfont">&#xe63d;</i>
                 <input type="text" placeholder="请输入您的手机号" (change)="user.phone=userPhone.value" #userPhone>
             </div>
             <div class="form-box">
-                <i class="iconfont f2">&#xe758;</i>
+                <i class="iconfont f2">&#xe664;</i>
                 <input type="password" placeholder="密码" (change)="user.password=password.value" #password>
             </div>
             <div class="form-box">
-                <i class="iconfont f1">&#xe603;</i>
+                <i class="iconfont f1">&#xe664;</i>
                 <input type="password" placeholder="确认密码" (change)="user.rePassword=rePassword.value" #rePassword>
             </div>
             <div class="form-box">

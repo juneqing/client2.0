@@ -26,7 +26,11 @@
     </div>
     <div class="centerB clear">
         <div class="centerBox">
-            <span class="fl">账户余额  ￥{{user.totalMoney | money}}</span>
+            <span class="fl">账户余额  
+                <span class="redColor">
+                        ￥{{user.totalMoney | money}}
+                </span>
+            </span>
             <a routerLink="/share/money-log">
                 <span class="fr moneyBtn">
                     收入明细
