@@ -151,9 +151,9 @@
 
 线上版本 [http://wq8.youqulexiang.com/admin/login](http://wq8.youqulexiang.com/admin/login)
  需要登录请联系 
-* QQ: 2121718893   
-* Email: 2121718893@qq.com
-* 电话: 13419597065
+* QQ: 173762842  
+* Email: 173762842@qq.com
+* 
 * 
 
 新版管理后台 登录界面
